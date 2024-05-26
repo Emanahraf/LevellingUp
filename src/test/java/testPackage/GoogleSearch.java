@@ -11,16 +11,17 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-
+import com.shaft.driver.SHAFT;
 public class GoogleSearch {
     WebDriver driver ;
+
     By secreachTextbox = By.id("APjFqb");
     By searchreult=By.xpath("//h3[@class=\"LC20lb MBeuO DKV0Md\"]");
     By pagetitle=By.xpath("//h1");
 
     @BeforeMethod
     public void Setup(){
-        driver = new FirefoxDriver();
+        driver = new SHAFT.GUI.WebDriver().getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
